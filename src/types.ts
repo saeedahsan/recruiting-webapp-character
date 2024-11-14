@@ -1,10 +1,24 @@
-export type Attributes = {
-    Strength: number;
-    Dexterity: number;
-    Constitution: number;
-    Intelligence: number;
-    Wisdom: number;
-    Charisma: number;
-};
+export type AttributeName =
+  | "Strength"
+  | "Dexterity"
+  | "Constitution"
+  | "Intelligence"
+  | "Wisdom"
+  | "Charisma";
+
+export type Attributes = Record<AttributeName, number>;
 
 export type Class = "Barbarian" | "Wizard" | "Bard";
+
+export type Skill = {
+  name: string;
+  points: number;
+  attributeModifier: string;
+};
+
+export type CharacterType = {
+  name: string;
+  attributes: Attributes;
+  skills: Skill[];
+};
+
